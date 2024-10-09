@@ -1,0 +1,67 @@
+<h1>happy</h1>
+<app-custom-textarea></app-custom-textarea>
+<div>
+  <router-outlet></router-outlet>
+</div>
+
+<div class="main">
+  <div>
+    <label for="numero">Informe um número: </label>
+    <input type="number" [(ngModel)]="numero" id="numero" />
+    <!-- ???????? -->
+    <button (click)="verificarDivisibilidade()">Verificar</button>
+    <p *ngIf="resultado">{{ resultado }}</p>
+  </div>
+
+
+  <div>
+    <label for="nome">Seu nome: </label>
+    <input type="text" [(ngModel)]="nome" id="nome" />
+    <button (click)="exibirMensagem()">Exibir Mensagem</button>
+  </div>
+  <p *ngIf="mensagem">{{ mensagem }}</p>
+
+  <div>
+    <label for="a">A: </label>
+    <input type="number" [(ngModel)]="a" id="a" />
+    <label for="b">B: </label>
+    <input type="number" [(ngModel)]="b" id="b" />
+    <label for="c">C: </label>
+    <input type="number" [(ngModel)]="c" id="c" />
+    <label for="d">D: </label>
+    <input type="number" [(ngModel)]="d" id="d" />
+    <button (click)="verificarComparacao()">Verificar</button>
+  </div>
+  <p *ngIf="resultado2">{{ resultado2 }}</p>
+
+  <div>
+    <label for="av1">AV1: </label>
+    <input type="number" [(ngModel)]="av1" id="av1" />
+    <label for="av2">AV2: </label>
+    <input type="number" [(ngModel)]="av2" id="av2" />
+    <label for="av3">AV3: </label>
+    <input type="number" [(ngModel)]="av3" id="av3" />
+    <label for="av4">AV4: </label>
+    <input type="number" [(ngModel)]="av4" id="av4" />
+    <button (click)="calcularMediaNota()">Calcular Média das notas</button>
+  </div>
+  <p *ngIf="resultadoMedia">{{ resultadoMedia }}</p>
+
+  <div>
+    <label for="valor1">Valor 1: </label>
+    <input type="number" [(ngModel)]="valor1" id="valor1" />
+    <label for="valor2">Valor 2: </label>
+    <input type="number" [(ngModel)]="valor2" id="valor2" />
+    <label for="valor3">Valor 3: </label>
+    <input type="number" [(ngModel)]="valor3" id="valor3" />
+    <label for="valor4">Valor 4: </label>
+    <input type="number" [(ngModel)]="valor4" id="valor4" />
+    <label for="valor5">Valor 5: </label>
+    <input type="number" [(ngModel)]="valor5" id="valor5" />
+    <button (click)="calcularMedia()">Calcular Média</button>
+  </div>
+  <p *ngIf="media">{{ media }}</p>
+
+</div>
+
+
