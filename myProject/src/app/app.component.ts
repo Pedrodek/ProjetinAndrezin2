@@ -7,8 +7,32 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'myProject';
+
   numero: number = 0
   resultado: string = ''
+
+  nome: string = '';
+  anoConclusao: number = 2024;
+  mensagem: string = '';
+
+  a: number = 0;
+  b: number = 0;
+  c: number = 0;
+  d: number = 0;
+  resultado2: string = '';
+
+  nota_1: number = 0;
+  nota_2: number = 0;
+  nota_3: number = 0;
+  nota_4: number = 0;
+  resultadoMedia: string = '';
+
+  valor_1: number = 0;
+  valor_2: number = 0;
+  valor_3: number = 0;
+  valor_4: number = 0;
+  valor_5: number = 0;
+  media: string = '';
 
   verificarDivisibilidade() {
     if (this.numero % 10 === 0) {
@@ -22,19 +46,9 @@ export class AppComponent {
     }
   }
 
-  nome: string = '';
-  anoConclusao: number = 2024;
-  mensagem: string = '';
-
   exibirMensagem() {
     this.mensagem = `Técnico em Informática Integrado ao Ensino Médio - Senac São Bernardo, concluído por ${this.nome} no ano de ${this.anoConclusao}`;
   }
-
-  a: number = 0;
-  b: number = 0;
-  c: number = 0;
-  d: number = 0;
-  resultado2: string = '';
 
   verificarComparacao() {
     const somaAC = this.a + this.c;
@@ -49,14 +63,8 @@ export class AppComponent {
     }
   }
 
-  av1: number = 0;
-  av2: number = 0;
-  av3: number = 0;
-  av4: number = 0;
-  resultadoMedia: string = '';
-
   calcularMediaNota() {
-    const media = (this.av1 + this.av2 + this.av3 + this.av4) / 4;
+    const media = (this.nota_1 + this.nota_2 + this.nota_3 + this.nota_4) / 4;
 
     if (media >= 7) {
       this.resultadoMedia = `Aprovado! Média: ${media}`;
@@ -65,15 +73,8 @@ export class AppComponent {
     }
   }
 
-  valor1: number = 0;
-  valor2: number = 0;
-  valor3: number = 0;
-  valor4: number = 0;
-  valor5: number = 0;
-  media: string = '';
-
   calcularMedia() {
-    const soma = this.valor1 + this.valor2 + this.valor3 + this.valor4 + this.valor5;
+    const soma = this.valor_1 + this.valor_2 + this.valor_3 + this.valor_4 + this.valor_5;
     const mediaCalculada = soma / 5;
     this.media = `A média calculada é: ${mediaCalculada}`;
   }

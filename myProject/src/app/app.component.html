@@ -36,28 +36,28 @@
 
   <div>
     <label for="av1">AV1: </label>
-    <input type="number" [(ngModel)]="av1" id="av1" />
+    <input type="number" [(ngModel)]="nota_1" id="nota_1" />
     <label for="av2">AV2: </label>
-    <input type="number" [(ngModel)]="av2" id="av2" />
+    <input type="number" [(ngModel)]="nota_2" id="nota_2" />
     <label for="av3">AV3: </label>
-    <input type="number" [(ngModel)]="av3" id="av3" />
+    <input type="number" [(ngModel)]="nota_3" id="nota_3" />
     <label for="av4">AV4: </label>
-    <input type="number" [(ngModel)]="av4" id="av4" />
+    <input type="number" [(ngModel)]="nota_4" id="nota_4" />
     <button (click)="calcularMediaNota()">Calcular Média das notas</button>
   </div>
   <p *ngIf="resultadoMedia">{{ resultadoMedia }}</p>
 
   <div>
     <label for="valor1">Valor 1: </label>
-    <input type="number" [(ngModel)]="valor1" id="valor1" />
+    <input type="number" [(ngModel)]="valor_1" id="valor_1" />
     <label for="valor2">Valor 2: </label>
-    <input type="number" [(ngModel)]="valor2" id="valor2" />
+    <input type="number" [(ngModel)]="valor_2" id="valor_2" />
     <label for="valor3">Valor 3: </label>
-    <input type="number" [(ngModel)]="valor3" id="valor3" />
+    <input type="number" [(ngModel)]="valor_3" id="valor_3" />
     <label for="valor4">Valor 4: </label>
-    <input type="number" [(ngModel)]="valor4" id="valor4" />
+    <input type="number" [(ngModel)]="valor_4" id="valor_4" />
     <label for="valor5">Valor 5: </label>
-    <input type="number" [(ngModel)]="valor5" id="valor5" />
+    <input type="number" [(ngModel)]="valor_5" id="valor_5" />
     <button (click)="calcularMedia()">Calcular Média</button>
   </div>
   <p *ngIf="media">{{ media }}</p>
