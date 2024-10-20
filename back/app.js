@@ -2,7 +2,10 @@ const express = require('express')
 
 const app = express()
 
-app.use(express.static())
+app.use(express.static('myProject'))
 
-// Seguir vídeo
-// Express & Nodemon/Node
+
+app.listen(3000, () => {
+    console.log('App listening :3')
+})
+

@@ -5,62 +5,65 @@
 </div>
 
 <div class="main">
-  <div>
-    <label for="numero">Informe um número: </label>
-    <input type="number" [(ngModel)]="numero" id="numero" />
-    <!-- ???????? -->
-    <button (click)="verificarDivisibilidade()">Verificar</button>
-    <p *ngIf="resultado">{{ resultado }}</p>
-  </div>
+  <form action="" [formGroup]="mainForm">
+    <div>
+      <label for="numero">Informe um número: </label>
+      <input type="number" id="numero" formControlName="numero"/>
+      <!-- ???????? -->
+      <button (click)="verificarDivisibilidade()">Verificar</button>
+      <p *ngIf="resultado">{{ resultado }}</p>
+    </div>
 
 
-  <div>
-    <label for="nome">Seu nome: </label>
-    <input type="text" [(ngModel)]="nome" id="nome" />
-    <button (click)="exibirMensagem()">Exibir Mensagem</button>
-  </div>
-  <p *ngIf="mensagem">{{ mensagem }}</p>
+    <div>
+      <label for="nome">Seu nome: </label>
+      <input type="text" id="nome" formControlName="nome"/>
+      <button (click)="exibirMensagem()">Exibir Mensagem</button>
+    </div>
+    <p *ngIf="mensagem">{{ mensagem }}</p>
 
-  <div>
-    <label for="a">A: </label>
-    <input type="number" [(ngModel)]="a" id="a" />
-    <label for="b">B: </label>
-    <input type="number" [(ngModel)]="b" id="b" />
-    <label for="c">C: </label>
-    <input type="number" [(ngModel)]="c" id="c" />
-    <label for="d">D: </label>
-    <input type="number" [(ngModel)]="d" id="d" />
-    <button (click)="verificarComparacao()">Verificar</button>
-  </div>
-  <p *ngIf="resultado2">{{ resultado2 }}</p>
+    <div>
+      <label for="a">A: </label>
+      <input type="number" id="a" formControlName="numberA"/>
+      <label for="b">B: </label>
+      <input type="number" id="b" formControlName="numberB"/>
+      <label for="c">C: </label>
+      <input type="number" id="c" formControlName="numberC"/>
+      <label for="d">D: </label>
+      <input type="number" id="d" formControlName="numberD"/>
+      <button (click)="verificarComparacao()">Verificar</button>
+    </div>
+    <p *ngIf="resultado2">{{ resultado2 }}</p>
 
-  <div>
-    <label for="av1">AV1: </label>
-    <input type="number" [(ngModel)]="nota_1" id="nota_1" />
-    <label for="av2">AV2: </label>
-    <input type="number" [(ngModel)]="nota_2" id="nota_2" />
-    <label for="av3">AV3: </label>
-    <input type="number" [(ngModel)]="nota_3" id="nota_3" />
-    <label for="av4">AV4: </label>
-    <input type="number" [(ngModel)]="nota_4" id="nota_4" />
-    <button (click)="calcularMediaNota()">Calcular Média das notas</button>
-  </div>
-  <p *ngIf="resultadoMedia">{{ resultadoMedia }}</p>
+    <!-- <div>
+      <label for="av1">AV1: </label>
+      <input type="number" id="nota_1" formControlName="nota_1"/>
+      <label for="av2">AV2: </label>
+      <input type="number" id="nota_2" formControlName="nota_2"/>
+      <label for="av3">AV3: </label>
+      <input type="number" id="nota_3" formControlName="nota_3"/>
+      <label for="av4">AV4: </label>
+      <input type="number" id="nota_4" formControlName="nota_4"/>
+      <button (click)="calcularMediaNota()">Calcular Média das notas</button>
+    </div>
+    <p *ngIf="resultadoMedia">{{ resultadoMedia }}</p>
 
-  <div>
-    <label for="valor1">Valor 1: </label>
-    <input type="number" [(ngModel)]="valor_1" id="valor_1" />
-    <label for="valor2">Valor 2: </label>
-    <input type="number" [(ngModel)]="valor_2" id="valor_2" />
-    <label for="valor3">Valor 3: </label>
-    <input type="number" [(ngModel)]="valor_3" id="valor_3" />
-    <label for="valor4">Valor 4: </label>
-    <input type="number" [(ngModel)]="valor_4" id="valor_4" />
-    <label for="valor5">Valor 5: </label>
-    <input type="number" [(ngModel)]="valor_5" id="valor_5" />
-    <button (click)="calcularMedia()">Calcular Média</button>
-  </div>
-  <p *ngIf="media">{{ media }}</p>
+    <div>
+      <label for="valor1">Valor 1: </label>
+      <input type="number" id="valor_1" formControlName="valor_1"/>
+      <label for="valor2">Valor 2: </label>
+      <input type="number" id="valor_2" formControlName="valor_2"/>
+      <label for="valor3">Valor 3: </label>
+      <input type="number" id="valor_3" formControlName="valor_3"/>
+      <label for="valor4">Valor 4: </label>
+      <input type="number" id="valor_4" formControlName="valor_4"/>
+      <label for="valor5">Valor 5: </label>
+      <input type="number" id="valor_5" formControlName="valor_5"/>
+      <button (click)="calcularMedia()">Calcular Média</button>
+    </div>
+    <p *ngIf="media">{{ media }}</p> -->
+  </form>
+
 
 </div>
 

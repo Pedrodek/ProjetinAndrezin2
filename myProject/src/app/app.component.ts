@@ -1,24 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { AbstractControl, ControlContainer, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
+
   title = 'myProject';
 
-  numero: number = 0
+  mainForm: FormGroup;
+
+
   resultado: string = ''
 
-  nome: string = '';
   anoConclusao: number = 2024;
   mensagem: string = '';
 
-  a: number = 0;
-  b: number = 0;
-  c: number = 0;
-  d: number = 0;
   resultado2: string = '';
 
   nota_1: number = 0;
@@ -34,25 +33,61 @@ export class AppComponent {
   valor_5: number = 0;
   media: string = '';
 
+  constructor(){
+    this.mainForm = new FormGroup({
+      numero: new FormControl('', Validators.compose([Validators.required, Validators.nullValidator])),
+      nome: new FormControl('', [Validators.required, Validators.nullValidator]),
+      numberA: new FormControl('', Validators.required),
+      numberB: new FormControl('', Validators.required),
+      numberC: new FormControl('', Validators.required),
+      numberD: new FormControl('', Validators.required),
+    })
+
+  }
+// COLOCAR VALIDATORS PARA O FORMS, CONECTAR AO BANCO, MANDAR AO BANCO......
+  ngOnInit(): void {
+
+  }
+
   verificarDivisibilidade() {
-    if (this.numero % 10 === 0) {
-      this.resultado = 'O número é divisível por 10';
-    } else if (this.numero % 5 === 0) {
-      this.resultado = 'O número é divisível por 5';
-    } else if (this.numero % 2 === 0) {
-      this.resultado = 'O número é divisível por 2';
+    const numero = this.mainForm.get('numero')?.value;
+    console.log(numero)
+
+    if (typeof(numero) != 'number') {
+      this.resultado = 'Insira um número';
+    } else if (numero === 0) {
+      this.resultado = 'Não insira 0';
     } else {
-      this.resultado = 'O número não é divisível por 10, 5 ou 2';
+      if (numero % 10 === 0) {
+        this.resultado = 'O número é divisível por 10';
+      } else if (numero % 5 === 0) {
+        this.resultado = 'O número é divisível por 5';
+      } else if (numero % 2 === 0) {
+        this.resultado = 'O número é divisível por 2';
+      } else {
+        this.resultado = 'O número não é divisível por 10, 5 ou 2';
+      }
     }
+
   }
 
   exibirMensagem() {
-    this.mensagem = `Técnico em Informática Integrado ao Ensino Médio - Senac São Bernardo, concluído por ${this.nome} no ano de ${this.anoConclusao}`;
+    const nome = this.mainForm.get('nome')?.value || false
+    if (nome) {
+      this.mensagem = `Técnico em Informática Integrado ao Ensino Médio - Senac São Bernardo, concluído por ${this.mainForm.get('nome')?.value} no ano de ${this.anoConclusao}.`;
+    } else {
+      this.mensagem = `Insira seu nome, se deseja ver a mensagem.`
+    }
+
   }
 
   verificarComparacao() {
-    const somaAC = this.a + this.c;
-    const multiplicacaoBD = this.b * this.d;
+    const numberA = this.mainForm.get('numberA')?.value || 0;
+    const numberB = this.mainForm.get('numberB')?.value || 0;
+    const numberC = this.mainForm.get('numberC')?.value || 0;
+    const numberD = this.mainForm.get('numberD')?.value || 0;
+    const somaAC = numberA + numberC;
+    const multiplicacaoBD = numberB * numberD;
 
     if (somaAC > multiplicacaoBD) {
       this.resultado = 'A + C é maior que B * D';

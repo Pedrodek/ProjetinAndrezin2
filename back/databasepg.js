@@ -1,4 +1,4 @@
-const {Client} = require('pg')
+const { Client } = require('pg')
 const { password, database } = require('pg/lib/defaults')
 
 const client = new Client({
