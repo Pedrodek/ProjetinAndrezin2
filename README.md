@@ -1,3 +1,3 @@
 ##PARTE DO CÓDIGO PODE ESTAR COMENTADO, TIRE OS COMENTÁRIOS E VERÁ ELE FUNCIONANDO##
 
-##USE: npx ng serve##
+##DENTRO DO myProject, USE: npx ng serve##
